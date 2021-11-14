@@ -16,7 +16,7 @@ namespace DependencyInjectionSample
         private IProductsStockRepository productStockRepository;
         public ShippingProccessor(IProductsStockRepository productsStockRepository)
         {
-            this.productStockRepository = productStockRepository;
+            this.productStockRepository = productsStockRepository;
         }
         public void MailProduct(Product product)
         {

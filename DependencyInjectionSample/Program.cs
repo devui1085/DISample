@@ -1,13 +1,16 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DependencyInjectionSample
 {
     class Program
     {
+        public static readonly IServiceProvider Container = new ContainerBuilder().Build();
         static void Main(string[] args)
         {
             var product = string.Empty;
-            var orderManager = new OrderManager();
+            var orderManager = Container.GetService<IOrderManager>();
+
             while (product !="exit")
             {
                 Console.WriteLine(@"Enter a product:
